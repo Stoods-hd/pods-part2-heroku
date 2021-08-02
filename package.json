@@ -1,0 +1,36 @@
+{
+  "name": "deploy-gds-pod-poc-webpack",
+  "version": "1.0.0",
+  "description": "GDS Pods Proof of Concept",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack serve",
+    "start": "node server.js",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@inrupt/solid-client": "^1.10.0",
+    "@inrupt/solid-client-authn-browser": "^1.10.0",
+    "@inrupt/vocab-common-rdf": "^0.7.5",
+    "buffer": "^6.0.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack": "^5.47.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stoods-hd/pods-part2-heroku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Stoods-hd/pods-part2-heroku/issues"
+  },
+  "homepage": "https://github.com/Stoods-hd/pods-part2-heroku#readme"
+}

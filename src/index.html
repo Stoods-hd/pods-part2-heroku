@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started: Inrupt JavaScript Client Libraries</title>
+    <script defer src="./index.js" ></script>
+    <link rel="stylesheet" href="my-demo.css" />
+  </head>
+  <body>
+    
+    <header>
+        <h2>Getting Started</h2>
+        <h3>with Inrupt JavaScript Client Libraries: Write Operation</h3>
+    </header>
+    <section id="login" class="panel">
+        <div class="row">
+          <label id="labelLogin" for="btnLogin">1. Enter your pod user name, and click the button to log in: </label>
+          <input type="url" id="PodUserName" name="PodUserName"  size="30">
+          <button name="btnLoginDotCom" id="btnLoginDotCom">Login To DotCom</button>
+          <button name="btnLoginDotNet" id="btnLoginDotNet">Login To DotNet</button>
+          <p id="labelStatus"></p>
+        </div>
+    </section>
+
+    <div id="write" class="panel" >
+      <div class="row">
+        <label id="writelabel">2. Create a private reading list in your Pod.</label>
+      </div>
+      <div class="row">
+        <label id="podlabel" for="PodURL">a. Enter your Pod URL: </label>
+        <input type="url" id="PodURL" name="PodURL"  size="50" pattern="https://.*">
+      </div>
+      <div class="row">
+        <label id="listLabel" for="titles">b. Enter items to read: </label>
+        <textarea id="titles" name="titles" rows="5" cols="42" >
+Princes of Marsh
+Acquiring skills</textarea>
+        <button name="btnCreate" id="btnCreate">Create</button> <span id="labelCreateStatus"></span>
+      </div>
+      <div class="row"></div>
+        <label id="labelRetrieved" for="savedtitles">Retrieved:</label>
+        <textarea id="savedtitles" name="savedtitles" rows="5" cols="42" readonly></textarea>
+      </div>
+    </div>
+
+    <div id="read" class="panel" >
+      <div class="row">
+        <label id="readlabel" for="PodURLRead">3. Read Pod URL: </label>
+        <input type="url" id="PodURLRead" name="PodURLRead"  size="50" pattern="https://.*">
+        <button name="btnRead" id="btnRead" >Get Data</button>
+      </div>
+      <dl class="display">
+        <label id="DataOutputLabel">Retrieved:</label>
+        <textarea id="DataOutputResponse" name="DataOutputResponse" rows="5" cols="42" readonly></textarea>
+      </dl>
+    </div>
+
+  </body>
+</html>
