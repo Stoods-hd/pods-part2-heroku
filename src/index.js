@@ -30,7 +30,7 @@ function loginToInruptDotCom() {
 
   return login({
     oidcIssuer: "https://broker.pod.inrupt.com",
-    redirectUrl: window.location.href,
+    redirectUrl: window.location.href + "?podusername=" + document.getElementById("PodUserName").value,
     clientName: "Getting started app"
   });
  
@@ -40,7 +40,7 @@ function loginToInruptDotCom() {
  
    return login({
      oidcIssuer: "https://inrupt.net",
-     redirectUrl: window.location.href,
+     redirectUrl: window.location.href + "?podusername=" + document.getElementById("PodUserName").value,
      clientName: "Getting started app"
    });
  }
@@ -56,12 +56,18 @@ function loginToInruptDotCom() {
         document.getElementById("labelStatus").textContent = "Your session is logged in.";
         document.getElementById("labelStatus").setAttribute("role", "alert");
 
+        // Get detail from URL
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var podusername = urlParams.get('podusername')
+        document.getElementById("PodUserName").value = podusername
+
         // Set the Pod URL
         if (session.info.webId.includes("inrupt.com")) {
-          document.getElementById("PodURL").value = "https://pod.inrupt.com/" + document.getElementById("PodUserName").value + "/testdata/myReadingList";
+          document.getElementById("PodURL").value = "https://pod.inrupt.com/" + podusername + "/testdata/myReadingList";
         }
         else {
-          document.getElementById("PodURL").value = "https://" + document.getElementById("PodUserName").value  + ".inrupt.net/testdata/myReadingList";
+          document.getElementById("PodURL").value = "https://" + podusername  + ".inrupt.net/testdata/myReadingList";
         }
 
         // Enable Create button
@@ -72,6 +78,7 @@ function loginToInruptDotCom() {
   // The example has the login redirect back to the index.html.
   // This calls the function to process login information.
   // If the function is called when not part of the login redirect, the function is a no-op.
+
   handleRedirectAfterLogin();
     
 
@@ -214,3 +221,4 @@ function loginToInruptDotCom() {
   btnRead.onclick = function() {  
     readList();
   };
+  
